@@ -4,6 +4,7 @@ import android.graphics.Typeface
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
@@ -18,6 +19,7 @@ class EmailAdapter(private val emails: List<Email>) : RecyclerView.Adapter<Email
         val titleTextView: TextView
         val summaryTextView: TextView
         val dateTextView: TextView
+        val profileImageView: ImageView
 
         // We also create a constructor that accepts the entire item row
         // and does the view lookups to find each sub-view
@@ -28,6 +30,7 @@ class EmailAdapter(private val emails: List<Email>) : RecyclerView.Adapter<Email
             titleTextView = itemView.findViewById(R.id.titleTv)
             summaryTextView = itemView.findViewById(R.id.summaryTv)
             dateTextView = itemView.findViewById(R.id.dateTv)
+            profileImageView = itemView.findViewById(R.id.profileImageView)
         }
     }
 
@@ -53,6 +56,7 @@ class EmailAdapter(private val emails: List<Email>) : RecyclerView.Adapter<Email
         holder.titleTextView.text = email.title
         holder.summaryTextView.text = email.summary
         holder.dateTextView.text = email.date
+        holder.profileImageView.setImageResource(email.profileImageResId)
 
         // Change font style based on 'clicked' status
         if (email.clicked) {

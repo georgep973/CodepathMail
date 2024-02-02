@@ -13,9 +13,10 @@ class EmailFetcher {
         fun getEmails(): MutableList<Email> {
             val emails : MutableList<Email> = ArrayList()
             val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
+            val profileImageResId = R.drawable.dragon
             for (i in 0..9) {
                 val currentDate = dateFormat.format(Date())
-                val email = Email(senders[i], title, summary, clicked, currentDate)
+                val email = Email(senders[i], title, summary, clicked, currentDate, profileImageResId)
                 emails.add(email)
             }
             return emails
@@ -24,9 +25,10 @@ class EmailFetcher {
         fun getNext5Emails(): MutableList<Email> {
             val newEmails : MutableList<Email> = ArrayList()
             val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
+            val profileImageResId = R.drawable.dragon
             for (i in 10..14) {
                 val currentDate = dateFormat.format(Date())
-                val email = Email(senders[i], title, summary, clicked, currentDate)
+                val email = Email(senders[i], title, summary, clicked, currentDate, profileImageResId)
                 newEmails.add(email)
             }
             return newEmails

@@ -5,6 +5,7 @@ class Email(
     val title: String,
     val summary: String,
     var clicked: Boolean = false,
-    val date: String
+    val date: String,
+    val profileImageResId: Int
 ) {
 }
